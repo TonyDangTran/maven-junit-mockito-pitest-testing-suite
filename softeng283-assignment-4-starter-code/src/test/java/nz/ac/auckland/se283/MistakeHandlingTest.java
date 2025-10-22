@@ -11,6 +11,8 @@ import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class MistakeHandlingTest {
   private MistakeHandling mistakeHandle;
@@ -104,4 +106,12 @@ public class MistakeHandlingTest {
     MistakeHandling handler = new MistakeHandling(mockResponse);
     assertThrows(IllegalArgumentException.class, () -> handler.record("   "));
   }
+  @Test
+  public void isValidDirection_InvalidDirection_ReturnsFalse() {
+    String invalidDirection = "UPWARDS";
+    mistakeHandle.handleCommand("MOVE " + invalidDirection);
+    boolean result = mistakeHandle.isValidDirection(invalidDirection);
+    assertEquals(false, result);
+  }
+
 }

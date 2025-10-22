@@ -39,19 +39,25 @@ public class MistakeHandling {
     return response.explainMistake(command);
   }
 
-  private boolean isValidCommand(String command) {
+  public boolean isValidCommand(String command) {
     String[] parts = command.trim().split("\\s+");
     if (parts.length != 2) {
+      if (parts.length == 1) {
+        action = parts[0].toUpperCase();
+        if (action.equals(STOP)) {
+          return true;
+        }
+      }
       return false;
   }
 
     action = parts[0].toUpperCase();
     direction = parts[1].toUpperCase();
 
-    return isValidAction(action) || isValidDirection(direction);
+    return isValidAction(action) && isValidDirection(direction);
 }
 
-private boolean isValidAction(String action) {
+public boolean isValidAction(String action) {
     if ( action.equals(MOVE) || action.equals(TURN) || action.equals(STOP)) 
     {
       return true;
@@ -59,7 +65,7 @@ private boolean isValidAction(String action) {
     return false;
 }
 
-  private boolean isValidDirection(String command) {
+  public boolean isValidDirection(String direction) {
     if ((direction.equals(LEFT))
         || (direction.equals(RIGHT))
         || (direction.equals(FORWARDS))
