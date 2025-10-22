@@ -135,5 +135,11 @@ public class MistakeHandlingTest {
     boolean result = mistakeHandle.isValidCommand(STOP);
     assertEquals(true, result);
   }
+  @Test
+  public void handleCommand_CommandIsValid_ReturnsCommandAccepted() {
+    String command = MOVE + " " + LEFT;
+    String result = mistakeHandle.handleCommand(command);
+    assertEquals(COMMAND_ACCEPTED, result);
+  }
 
 }
