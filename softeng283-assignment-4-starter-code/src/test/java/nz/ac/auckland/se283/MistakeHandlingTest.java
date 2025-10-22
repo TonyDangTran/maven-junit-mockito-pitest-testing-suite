@@ -113,5 +113,11 @@ public class MistakeHandlingTest {
     boolean result = mistakeHandle.isValidDirection(invalidDirection);
     assertEquals(false, result);
   }
+  @ParameterizedTest
+  @ValueSource(strings = {LEFT,RIGHT,BACKWARDS,FORWARDS})
+  public void isValidDirection_ValidDirection_ReturnsTrue(String input) {
+    boolean result = mistakeHandle.isValidDirection(input);
+    assertEquals(true, result);
+  }
 
 }
