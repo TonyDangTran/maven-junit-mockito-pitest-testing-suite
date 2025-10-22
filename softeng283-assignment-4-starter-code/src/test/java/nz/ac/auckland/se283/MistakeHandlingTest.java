@@ -119,6 +119,12 @@ public class MistakeHandlingTest {
     boolean result = mistakeHandle.isValidDirection(input);
     assertEquals(true, result);
   }
+  @ParameterizedTest
+  @ValueSource(strings = {MOVE, TURN})
+  public void isValidAction_InputIsMove_ReturnsTrue(String input) {
+    boolean result = mistakeHandle.isValidAction(input);
+    assertEquals(true, result);
+  }
   @Test
   public void isValidAction_InputIsStop_ReturnsTrue() {
     boolean result = mistakeHandle.isValidAction(STOP);
@@ -140,6 +146,16 @@ public class MistakeHandlingTest {
     String command = MOVE + " " + LEFT;
     String result = mistakeHandle.handleCommand(command);
     assertEquals(COMMAND_ACCEPTED, result);
+  }
+  @Test
+  public void isValidCommand_OneActionIsValidOneDirectionIsInvalid_ReturnsFalse() {
+    boolean result = mistakeHandle.isValidCommand(MOVE + " " + MOVE);
+    assertEquals(false, result);
+  }
+  @Test
+  public void isValidCommand_BothInputsnvalid_ReturnsFalse() {
+    boolean result = mistakeHandle.isValidCommand(LEFT + " " + MOVE);
+    assertEquals(false, result);
   }
 
 }
