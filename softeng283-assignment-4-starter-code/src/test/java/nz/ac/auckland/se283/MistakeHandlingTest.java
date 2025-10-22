@@ -119,5 +119,10 @@ public class MistakeHandlingTest {
     boolean result = mistakeHandle.isValidDirection(input);
     assertEquals(true, result);
   }
+  @Test
+  public void isValidAction_InputIsStop_ReturnsTrue() {
+    boolean result = mistakeHandle.isValidAction(STOP);
+    assertEquals(true, result);
+  }
 
 }
