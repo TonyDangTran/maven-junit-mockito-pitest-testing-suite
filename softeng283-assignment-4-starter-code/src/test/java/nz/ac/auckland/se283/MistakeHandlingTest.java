@@ -130,4 +130,10 @@ public class MistakeHandlingTest {
     assertEquals(false, result);
   }
 
+  @Test
+  public void isValidCommand_InputIsStopOnly_ReturnsTrue() {
+    boolean result = mistakeHandle.isValidCommand(STOP);
+    assertEquals(true, result);
+  }
+
 }
