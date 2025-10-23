@@ -95,4 +95,11 @@ public class LevelManagerTest {
   assertEquals(1, result);   
 }
 
+@Test
+void setPointsAndsetLevel_pointsEqualToLevel_returnsSameValue() {
+  level.setLevel(1);
+  level.setPoints();                
+  assertEquals(1, level.setPoints());
+}
+
 }
