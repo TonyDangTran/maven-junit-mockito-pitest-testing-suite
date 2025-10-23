@@ -88,4 +88,11 @@ public class LevelManagerTest {
     LevelStore mockStore = mock(LevelStore.class);
     assertThrows(NullPointerException.class, () -> new LevelManager(mockStore, null));
   }
+  @Test
+  void setLevel_PointsBelowLevelThenSetLevelAgain_ReturnsOnePoint() {
+  level.setLevel(2);            
+  int result = level.setPoints();  
+  assertEquals(1, result);   
+}
+
 }
