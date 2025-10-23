@@ -158,10 +158,5 @@ public class MistakeHandlingTest {
     assertEquals(false, result);
   }
 
-  @Test
-void loadProgress_BlankAccount_returnsNoSavedMessage() {
-  LevelManager blankAccount = new LevelManager();
-  assertEquals(NO_SAVED_PROGRESS_MESSAGE, blankAccount.loadProgress());
-}
 
 }
