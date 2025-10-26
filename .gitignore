@@ -1,7 +1,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/java,maven,visualstudiocode,eclipse,intellij,macos,linux,windows,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,maven,visualstudiocode,eclipse,intellij,macos,linux,windows,git
 
-target/
+
 codestyle.config
 
 ### Eclipse ###
@@ -273,7 +273,6 @@ Temporary Items
 *.icloud
 
 ### Maven ###
-target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
