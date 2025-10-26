@@ -35,35 +35,37 @@ public class MistakeHandling {
   public String handleCommand(String command) {
     if (isValidCommand(command)) {
       return COMMAND_ACCEPTED;
-    } 
+    }
     return response.explainMistake(command);
   }
 
   public boolean isValidCommand(String command) {
+    // Split the command into parts and trim, then checks if you have 2 components, 1 action and 1
+    // direction.
     String[] parts = command.trim().split("\\s+");
     if (parts.length != 2) {
       if (parts.length == 1) {
-        action = parts[0].toUpperCase();
+        action =
+            parts[0].toUpperCase(); // if only 1 actin, check if it is STOP. if not, return false.
         if (action.equals(STOP)) {
           return true;
         }
       }
       return false;
-  }
+    }
 
-    action = parts[0].toUpperCase();
+    action = parts[0].toUpperCase(); // global variables are set to be fed to other methods.
     direction = parts[1].toUpperCase();
 
-    return isValidAction(action) && isValidDirection(direction);
-}
+    return isValidAction(action) && isValidDirection(direction); // return the state of both checks
+  }
 
-public boolean isValidAction(String action) {
-    if ( action.equals(MOVE) || action.equals(TURN) || action.equals(STOP)) 
-    {
+  public boolean isValidAction(String action) {
+    if (action.equals(MOVE) || action.equals(TURN) || action.equals(STOP)) {
       return true;
     }
     return false;
-}
+  }
 
   public boolean isValidDirection(String direction) {
     if ((direction.equals(LEFT))
