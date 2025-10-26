@@ -26,4 +26,7 @@ jobs:
       - name: Run tests
         run: ./mvnw test
 
+      - name: Make Maven Wrapper Executable
+        run: chmod +x ./mvnw
+
         
