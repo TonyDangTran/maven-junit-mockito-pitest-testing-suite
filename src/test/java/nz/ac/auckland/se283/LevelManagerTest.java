@@ -88,23 +88,24 @@ public class LevelManagerTest {
     LevelStore mockStore = mock(LevelStore.class);
     assertThrows(NullPointerException.class, () -> new LevelManager(mockStore, null));
   }
+
   @Test
   void setLevel_PointsBelowLevelThenSetLevelAgain_ReturnsOnePoint() {
-  level.setLevel(2);            
-  int result = level.setPoints();  
-  assertEquals(1, result);   
-}
+    level.setLevel(2);
+    int result = level.setPoints();
+    assertEquals(1, result);
+  }
 
-@Test
-void setPointsAndsetLevel_pointsEqualToLevel_returnsSameValue() {
-  level.setLevel(1);
-  level.setPoints();                
-  assertEquals(1, level.setPoints());
-}
-@Test
-void loadProgress_BlankAccount_returnsNoSavedMessage() {
-  LevelManager blankAccount = new LevelManager();
-  assertEquals(NO_SAVED_PROGRESS_MESSAGE, blankAccount.loadProgress());
-}
+  @Test
+  void setPointsAndsetLevel_pointsEqualToLevel_returnsSameValue() {
+    level.setLevel(1);
+    level.setPoints();
+    assertEquals(1, level.setPoints());
+  }
 
+  @Test
+  void loadProgress_BlankAccount_returnsNoSavedMessage() {
+    LevelManager blankAccount = new LevelManager();
+    assertEquals(NO_SAVED_PROGRESS_MESSAGE, blankAccount.loadProgress());
+  }
 }
