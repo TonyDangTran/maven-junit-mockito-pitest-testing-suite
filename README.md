@@ -1,6 +1,5 @@
 [![Build](https://github.com/SOFTENG283/softeng283-assignment-4-
-TonyDangTran/actions/workflows/ci.yaml/badge.svg)](https://github.com/SOFTENG283/softeng283-
-assignment-4-TonyDangTran/actions/workflows/ci.yaml)
+TonyDangTran/actions/workflows/ci.yaml/badge.svg)](https://github.com/SOFTENG283/softeng283-assignment-4-TonyDangTran/actions/workflows/ci.yaml)
 
 # SOFTENG 283 - Assignment 4
 
