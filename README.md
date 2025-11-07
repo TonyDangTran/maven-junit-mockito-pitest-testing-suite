@@ -1,3 +1,7 @@
+[![Build](https://github.com/SOFTENG283/softeng283-assignment-4-
+TonyDangTran/actions/workflows/ci.yaml/badge.svg)](https://github.com/SOFTENG283/softeng283-
+assignment-4-TonyDangTran/actions/workflows/ci.yaml)
+
 # SOFTENG 283 - Assignment 4
 
 See Canvas for instructions
@@ -39,7 +43,3 @@ open target/pit-reports/index.html
 
 - PDF report max 4 pages
 - your GitHub repo (automatically cloned after the deadline)
-
-- [![Build](https://github.com/SOFTENG283/softeng283-assignment-4-
-TonyDangTran/actions/workflows/ci.yaml/badge.svg)](https://github.com/SOFTENG283/softeng283-
-assignment-4-TonyDangTran/actions/workflows/ci.yaml)
